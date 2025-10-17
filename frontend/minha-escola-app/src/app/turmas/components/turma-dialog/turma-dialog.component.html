@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ form.value.id ? 'Editar Turma' : 'Nova Turma' }}</h2>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Série</mat-label>
+      <mat-select formControlName="serie">
+        <mat-option *ngFor="let s of series" [value]="s.id">{{ s.nome }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Ano letivo</mat-label>
+      <input matInput type="number" formControlName="ano_letivo" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Turno</mat-label>
+      <input matInput formControlName="turno" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Professores</mat-label>
+      <mat-select formControlName="professores" multiple>
+        <mat-option *ngFor="let p of professores" [value]="p.id">{{ p.username }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" (click)="save()" [disabled]="form.invalid">Salvar</button>
+</div>
+

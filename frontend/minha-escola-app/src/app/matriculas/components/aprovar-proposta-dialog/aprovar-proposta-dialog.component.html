@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Aprovar Proposta</h2>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Turma</mat-label>
+      <mat-select formControlName="turma">
+        <mat-option *ngFor="let t of turmas" [value]="t.id">{{ t.nome }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Plano</mat-label>
+      <mat-select formControlName="plano">
+        <mat-option *ngFor="let p of planos" [value]="p.id">{{ p.nome }} - {{ p.valor | currency:'BRL' }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Ano letivo</mat-label>
+      <input matInput type="number" formControlName="ano_letivo" />
+    </mat-form-field>
+  </form>
+  
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" (click)="aprovar()" [disabled]="form.invalid">Aprovar</button>
+</div>
+

@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>Registrar Baixa</h2>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Data de pagamento</mat-label>
+      <input matInput placeholder="YYYY-MM-DD" formControlName="data_pagamento" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Valor pago</mat-label>
+      <input matInput type="number" formControlName="valor_pago" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Observação</mat-label>
+      <input matInput formControlName="observacao" />
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-flat-button color="primary" (click)="salvar()" [disabled]="form.invalid">Salvar</button>
+</div>
+

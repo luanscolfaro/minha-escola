@@ -1,0 +1,46 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Python / Django
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+
+# Django runtime
+db.sqlite3
+media/
+staticfiles/
+*.log
+
+# Environments / secrets
+.venv/
+venv/
+.env
+.env.*
+
+# IDE/editor
+.vscode/
+.idea/
+*.code-workspace
+
+# Tests/coverage
+.coverage
+htmlcov/
+
+# Node / Angular
+frontend/**/node_modules/
+frontend/**/dist/
+frontend/**/.angular/
+frontend/**/.env
+frontend/**/.env.*local
+npm-debug.log*
+yarn-error.log
+

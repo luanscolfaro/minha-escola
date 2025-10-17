@@ -1,0 +1,27 @@
+<mat-card>
+  <h2 class="page-title">Documentos</h2>
+  <div class="doc-grid">
+    <mat-form-field appearance="outline">
+      <mat-label>ID do Aluno</mat-label>
+      <input matInput type="number" [(ngModel)]="alunoId" placeholder="Ex.: 1" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ano</mat-label>
+      <input matInput type="number" [(ngModel)]="ano" />
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-raised-button color="primary" (click)="gerarBoletim()">
+        <mat-icon>description</mat-icon>
+        Boletim (PDF)
+      </button>
+
+      <button mat-raised-button (click)="gerarDeclaracao()">
+        <mat-icon>assignment</mat-icon>
+        Declaração de Matrícula (PDF)
+      </button>
+    </div>
+  </div>
+</mat-card>
+

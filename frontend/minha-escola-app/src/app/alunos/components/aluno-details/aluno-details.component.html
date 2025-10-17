@@ -1,0 +1,18 @@
+<div class="aluno-details" *ngIf="aluno">
+  <h2>Aluno: {{ aluno.nome }} ({{ aluno.matricula }})</h2>
+  <p>CPF: {{ aluno.cpf || '-' }}</p>
+  <p>Status: {{ aluno.ativo ? 'Ativo' : 'Inativo' }}</p>
+
+  <div class="actions">
+    <form [formGroup]="anoForm" class="ano-form">
+      <label>
+        Ano
+        <input type="number" formControlName="ano" />
+      </label>
+    </form>
+
+    <button mat-raised-button color="primary" (click)="baixarBoletim()">Boletim (PDF)</button>
+    <button mat-raised-button (click)="baixarDeclaracao()">Declaração de Matrícula (PDF)</button>
+  </div>
+</div>
+

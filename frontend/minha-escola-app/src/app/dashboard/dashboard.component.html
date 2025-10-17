@@ -1,0 +1,29 @@
+<div class="dashboard-grid">
+  <mat-card class="stat-card primary">
+    <div class="label">Alunos</div>
+    <div class="value">{{ counts.alunos }}</div>
+  </mat-card>
+  <mat-card class="stat-card accent">
+    <div class="label">Turmas</div>
+    <div class="value">{{ counts.turmas }}</div>
+  </mat-card>
+  <mat-card class="stat-card warn">
+    <div class="label">Matrículas</div>
+    <div class="value">{{ counts.matriculas }}</div>
+  </mat-card>
+  <mat-card class="stat-card neutral">
+    <div class="label">Faturas Abertas</div>
+    <div class="value">{{ counts.faturasAbertas }}</div>
+  </mat-card>
+</div>
+
+<mat-card style="margin-top: 16px;">
+  <div style="display:flex; align-items:center; justify-content:space-between;">
+    <h2 class="page-title">Visão Geral</h2>
+    <button mat-raised-button color="primary" (click)="refresh()" [disabled]="loading">
+      <mat-icon>refresh</mat-icon> Atualizar
+    </button>
+  </div>
+  <p>Bem-vindo ao painel do Minha Escola. Use o menu à esquerda para navegar entre os módulos.</p>
+</mat-card>
+
